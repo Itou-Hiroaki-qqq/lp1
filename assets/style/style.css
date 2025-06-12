@@ -1,0 +1,185 @@
+@charset "utf-8" ;
+
+/* 結合時に消去 */
+html {
+    font-size: 100%;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*
+section__course
+================================================ */
+.section__course {
+    padding: 64px 0 63px;
+}
+
+.section__title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    line-height: calc(36px / 28px);
+    text-align: center;
+}
+
+.tab {
+  margin-top: 21px;
+}
+
+/* タブメニュー */
+.tab__menu {
+  display: flex;
+  align-items: flex-end; /* メニューを下揃え */
+  justify-content: center;
+  min-height: 66px; /* メニュー切替時にタブがズレないように */
+}
+
+.tab__menu-item {
+  width: calc(100vw*164/375);
+  /* 縮小時の文字の崩れを防ぐため、上下に関してはパディング20pxにline-hight分9pxを足した29pxとして計算 */
+  padding: calc(20px + 9px) 19px;
+  text-align: center;
+  margin-right: calc(100vw*15/375);
+  background-color: #F0F0F0;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  cursor: pointer;
+  transition: all .3s; /* アニメーション */
+  font-size: 1.125rem;
+  color: #333333;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.tab__menu-item:last-of-type {
+  margin-right: 0px;
+}
+
+/* is-activeがついている時のスタイル */
+.tab__menu-item.is-active {
+  background-color: #F2F9FF;
+  opacity: 1;
+}
+
+/* タブパネル */
+.tab__panel {
+ width: 100%;
+}
+
+.tab__panel-box {
+  padding: 28px calc(100vw*16/375) 56px;
+  background-color: #F2F9FF;
+}
+
+.tab__panel-box {
+  display: none;
+}
+
+/* is-showがついている時のスタイル */
+.tab__panel-box.is-show {
+  display: block;
+}
+
+.tab__panel-item {
+    margin-top: 28px;
+}
+
+.tab__panel-item:first-child {
+    margin-top: 0;
+}
+
+.tab__panel-item >img {
+    width: 100%;
+    aspect-ratio: 343 / 220;
+    object-fit: cover;
+}
+
+.tab__panel-item >p {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: calc(36px / 20px);
+}
+
+.tab__panel-item >p img {
+    width: 14px;
+    height: 12px;
+    margin-right: 8px;
+}
+
+
+/* section__course PC */
+@media screen and (min-width:768px) {
+    .section__course {
+        padding: 72px 16px;
+        max-width: 1160px;
+        margin: 0 auto;
+    }
+
+    .section__title {
+        font-size: 1.75rem;
+        line-height: 1;
+    }
+
+    .tab {
+        margin-top: 32px;
+    }
+
+    /* タブメニュー */
+    .tab__menu {
+        min-height: 75px;
+    }
+
+    .tab__menu-item {
+        flex: 1;
+        padding: 20px 0;
+        line-height: calc(36px / 24px);
+        text-align: center;
+        margin-right: 35px;
+        font-size: 1.5rem;
+    }
+
+    /* タブパネル */
+    .tab__panel-box {
+        /* padding-rightは33pxとなっているが32pxに統一しておく */
+        padding: 32px;
+    }
+
+    .tab__panel-item {
+        margin-top: 0px;
+        width: calc((100% - 31px) / 2);
+    }
+
+    .tab__panel-item >img {
+        aspect-ratio: 532 / 329;
+    }
+
+    .tab__panel-item >p {
+        margin-top: 16px;
+        font-size: 1.25rem;
+    }
+
+    .tab__panel-item >p img {
+        width: 17px;
+        height: 15px;
+        margin-right: 12px;
+    }
+
+    .tab__panel-box001,
+    .tab__panel-box002 {
+        display: none;
+    }
+
+    .tab__panel-box001.is-show,
+    .tab__panel-box002.is-show {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px 31px;
+    }
+
+
+} /* @media screen and (min-width:768px */
