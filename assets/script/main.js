@@ -1,14 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // DOM取得
+  // ◆headerのドロワーメニュー
+  const hamburgerMenu = document.querySelector('.hamburger__menu');
+  const nav = document.querySelector('.nav');
+
+  hamburgerMenu.addEventListener('click', () => {
+	nav.classList.toggle('active');
+  });
+
+
+  // ◆section__courseのタブメニュー
   const tabMenus = document.querySelectorAll('.tab__menu-item');
 
-  // イベント付加
   tabMenus.forEach((tabMenu) => {
-    tabMenu.addEventListener('click', tabSwitch);
+	tabMenu.addEventListener('click', tabSwitch);
   })
 
-  // イベントの処理
   function tabSwitch(e) {
 
     // クリックされた要素のデータ属性を取得
@@ -36,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         tabPanelItem.classList.add('is-show');
       }
     })
-
   }
 
 }); //script END
