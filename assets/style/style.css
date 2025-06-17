@@ -100,6 +100,7 @@ header
     /* 初期表示を右画面外に隠す */
     transform: translateX(100%);
     transition: .4s;
+    z-index: 100;
 }
 
 /* .navに.activeがつくと出現 */
@@ -177,7 +178,6 @@ header
         left: 0;
         z-index: 100;
         background-color: #fff;
-        /* なおheaderの高さは101pxと確認 */
     }
 
     .wapper__pc {
@@ -232,11 +232,6 @@ header
         font-size: 1.25rem;
         color: #333;
     }
-
-    /* .nav__item a {
-        display: flex;
-        align-items: center;
-    } */
 
     .nav__item span {
         display: none;
