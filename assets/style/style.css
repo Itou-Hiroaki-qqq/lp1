@@ -806,6 +806,10 @@ section__course
     margin-top: 0;
 }
 
+.imgHidden {
+    overflow: hidden;
+}
+
 .tab__panel-item .pcImg {
     display: none;
 }
