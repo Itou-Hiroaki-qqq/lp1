@@ -58,7 +58,7 @@ header
 
 .header__title a img {
     width: 166px;
-    height: 34px;
+    height: 37px;
     cursor: pointer;
 }
 
@@ -82,7 +82,7 @@ header
 /* ハンバーガーメニューのアイコンのスタイル */
 .hamburger__line {
     width: 30px;
-    height: 4.5px;
+    height: 7px;
     background-color: #fff;
     margin-bottom: 7px;
 }
@@ -266,13 +266,78 @@ article__heder
     margin-top: 70px;
 }
 
-.mainVisual__pc {
-    display: none;
+.mainVisual {
+    width: 100%;
+    aspect-ratio: 375 / 250;
+    padding: 36px calc(100% * 16/375);
+    background: url(../image/mainVisual_sp.jpg) no-repeat center / cover;
 }
 
-.mainVisual__sp {
-    aspect-ratio: 375 / 250;
-    object-fit: cover;
+.mainVisual_subtitle {
+    width: 43%;
+    text-align: center;
+    font-size: calc(100vw * 11/375);
+    line-height: 1.45;
+    position: relative;
+}
+
+.mainVisual_subtitle::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 70px;
+    aspect-ratio: 147 / 68;
+    background: url(../image/frame-left_sp.png) no-repeat left center / contain;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.mainVisual_subtitle::after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 70px;
+    background: url(../image/frame-right_sp.png) no-repeat left center / contain;
+    position: absolute;
+    right: 0;
+    top: -2px;
+}
+
+.mainVisual_subtitle--result {
+    display: block;
+    color: #F11F8D;
+    /* font-size: 25px; */
+    font-size: min(calc(100vw * 25/375), 32px);
+    font-family: 'poppins', serif;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 1.52;
+    /* pixelperfectのための調整 */
+    margin-top: -2px;
+}
+
+.mainVisual_subtitle--result span {
+    font-size: 36px;
+    font-size: calc(100vw * 36/375);
+    font-size: min(calc(100vw * 36/375), 40px);
+}
+
+.mainVisual_title {
+    margin-top: 11px;
+    /* font-size: 14px; */
+    font-size: calc(100vw * 14/375);
+    line-height: 2.57;
+}
+
+.mainVisual_title span {
+    margin-top: -8px;
+    display: block;
+    color: #005BAC;
+    /* font-size: 25px; */
+    font-size: calc(100vw * 25/375);
+    font-weight: 900;
+    line-height: 1.44;
 }
 
 .mainVisual__btnZone {
@@ -287,7 +352,7 @@ article__heder
     align-items: center;
     justify-content: center;
     max-width: 250px;
-    margin: 0 auto;
+    margin: -1px auto;
     padding: 12px;
     border-radius: 25px;
     color: #fff;
@@ -310,7 +375,7 @@ article__heder
 }
 
 .requestBtn {
-    margin-top: 12px;
+    margin-top: 13px;
     background-color: #3AC8AD;
 }
 
@@ -373,7 +438,8 @@ article__heder
 section__reason
 ================================================ */
 .section__reason {
-    padding: 0 calc(100% * 16/375) 36px;
+    margin-top: 8px;
+    padding: 0 calc(100% * 16/375) 33px;
     scroll-margin-top: 385px;
 }
 
@@ -386,24 +452,28 @@ section__reason
 }
 
 .reason__list {
-    margin-top: 17px;
+    margin-top: 22px;
 }
 
 .reason__item {
-    margin-top: 36px;
+    margin-top: 34px;
 }
 
 .reason__item:first-child {
     margin-top: 0;
 }
 
-.reason__item img {
+.reason__item .pcImg {
+    display: none;
+}
+
+.reason__item .spImg {
     aspect-ratio: 343 / 220;
     object-fit: cover;
 }
 
 .reason__txtZone {
-    margin-top: 8px;
+    margin-top: 15px;
 }
 
 .reason__topic--number {
@@ -418,20 +488,24 @@ section__reason
 .reason__topic--number span {
     font-size: 2.25rem;
     line-height: 1;
+    margin-left: 2px;
 }
 
 .reason__topic--name {
+    margin-top: 5px;
     display: block;
     font-size: 1.25rem;
     font-weight: bold;
-    line-height: 1.8;
+    line-height: 1.41;
 }
 
+
 .reason__txt {
-    margin-top: 12px;
+    margin-top: 10px;
     font-size: 1rem;
     line-height: 1.75;
 }
+
 
 
 /* section__reason PC */
@@ -511,7 +585,7 @@ section__reason
 section entry
 ================================================ */
 .entry {
-    padding: 40px calc(100% * 16/375);
+    padding: 38px calc(100% * 16/375) 40px;
     background-color: rgba(255, 85, 85, 0.1);
 }
 
@@ -529,7 +603,7 @@ section entry
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 12px auto 0;
+    margin: 10px auto 0;
     text-align: center;
     background: linear-gradient(90deg, #0271E0, #53A2F0);
     border-radius: 35px;
@@ -586,12 +660,16 @@ section entry
 section__course
 ================================================ */
 .section__course {
-    padding: 64px 0 63px;
+    padding: 66px 0 62px;
     scroll-margin-top: 335px;
 }
 
+.section__title--course {
+    margin-left: 15px;
+}
+
 .tab {
-  margin-top: 21px;
+  margin-top: 18px;
 }
 
 /* タブメニュー */
@@ -635,7 +713,7 @@ section__course
 }
 
 .tab__panel-box {
-  padding: 28px calc(100%*16/375) 56px;
+  padding: 20px calc(100%*16/375) 53px;
   background-color: #F2F9FF;
 }
 
@@ -649,14 +727,18 @@ section__course
 }
 
 .tab__panel-item {
-    margin-top: 28px;
+    margin-top: 25px;
 }
 
 .tab__panel-item:first-child {
     margin-top: 0;
 }
 
-.tab__panel-item >img {
+.tab__panel-item .pcImg {
+    display: none;
+}
+
+.tab__panel-item .spImg {
     width: 100%;
     aspect-ratio: 343 / 220;
     object-fit: cover;
@@ -664,7 +746,7 @@ section__course
 }
 
 .tab__panel-item >p {
-    margin-top: 12px;
+    margin-top: 8px;
     display: flex;
     align-items: center;
     font-size: 1.25rem;
@@ -762,15 +844,20 @@ section__course
 section__cost
 ================================================ */
 .section__cost {
-    padding: 64px calc(100% * 16/375);
+    padding: 66px calc(100% * 16/375) 63px;
     scroll-margin-top: 335px;
+}
+
+.section__title--cost {
+    margin-left: 20px;
+    letter-spacing: .2em;
 }
 
 .section__cost table {
     border-collapse: collapse;
     width: 100%;
     max-width: 600px;
-    margin: 23px auto 0;
+    margin: 22px auto 0;
     /* テーブル全体の枠線 */
     border: 3px solid #ccc;
 }
@@ -788,7 +875,8 @@ td:last-child {
 }
 
 .section__cost td {
-    padding: 11px;
+    padding: 14px 0 9px ;
+
 }
 
 .section__cost th,
@@ -798,10 +886,15 @@ td:first-child {
     line-height: 2.25;
 }
 
-.section__cost th {
+.section__cost th:first-child {
     /* 縮小時の文字の崩れを防ぐため、line-heightをnormalにして、上下パディングに値を上乗せ */
     line-height: normal;
-    padding: 22px 20px;
+    padding: 21px 20px 20px;
+}
+
+.section__cost th:last-child {
+    line-height: normal;
+    padding: 21px 23px 20px 10px;
 }
 
 .section__cost td:last-child {
@@ -833,6 +926,19 @@ td:first-child {
 }
 .td__under {
     border-bottom: none;
+}
+
+.section__cost .price {
+    position: relative;
+    left: -3px;
+}
+
+.section__cost #priceLast .priceLast__item {
+    font-size: 1.75rem;
+    font-weight: bold;
+    font-family: 'poppins', serif;
+    line-height: 1;
+    margin-left: 24px;
 }
 
 
@@ -898,20 +1004,31 @@ article__footer
     width: 100%;
 }
 
-.articleFooter__faq--pc,
-.articleFooter__search--pc {
-    display: none;
-}
 
-.articleFooter__faq--sp,
-.articleFooter__search--sp {
-    display: block;
+.articleFooter__faq,
+.articleFooter__search {
+    display: flex;
+    align-items: center;
     width: 100%;
     aspect-ratio: 375 / 170;
-    object-fit: cover;
     cursor: pointer;
+    padding: 0 calc(100% * 16/375) 3px;
+
+    font-size: 1.375rem;
+    font-weight: bold;
+    line-height: 1.27;
+    color: #fff;
+
+    opacity: .6;
 }
 
+.articleFooter__faq {
+    background: url(../image/faq_img_sp.jpg) no-repeat center / cover;
+}
+
+.articleFooter__search {
+    background: url(../image/search_img_sp.jpg) no-repeat center / cover;
+}
 
 /* article__footer  PC*/
 @media screen and (min-width:768px) {
@@ -948,7 +1065,7 @@ footer
 ================================================ */
 .footer {
     /* 縮小したときの表示崩れを防ぐため、line-heightはつけずパディングに上乗せ */
-    padding: calc(32px + 7px) calc(100% * 16/375);
+    padding: 29px calc(100% * 16/375) 39px calc(100% * 31/375);
     background-color: #ddd;
 }
 
