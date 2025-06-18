@@ -5,7 +5,7 @@ COMMON
 ================================================ */
 html {
     font-size: 100%;
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -63,7 +63,7 @@ header
 }
 
 /* ハンバーガーメニューのスタイル */
-.hamburger__menu {
+.hamburger-menu {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,7 +80,7 @@ header
 }
 
 /* ハンバーガーメニューのアイコンのスタイル */
-.hamburger__line {
+.hamburger-menu__line {
     width: 30px;
     height: 7px;
     background-color: #fff;
@@ -139,14 +139,14 @@ header
     height: 12px;
 }
 
-.entryBtn--header {
+.nav__item:has(.entryBtn--header) {
     border-bottom: none;
     padding-bottom: 0;
     max-width: 350px;
     margin: 32px auto 0;
 }
 
-.entryBtn--header a {
+.nav__item .entryBtn--header {
     display: block;
     padding: 20px;
     text-align: center;
@@ -159,7 +159,7 @@ header
     transition: all .3s ease-out;
 }
 
-.entryBtn--header a:hover {
+.entryBtn--header:hover {
     opacity: .6;
 }
 
@@ -180,7 +180,7 @@ header
         background-color: #fff;
     }
 
-    .wapper__pc {
+    .wapper--pc {
         width: 100%;
         max-width: 1160px;
         margin: 0 auto;
@@ -204,7 +204,7 @@ header
     }
 
     /* ハンバーガーメニューのスタイル */
-    .hamburger__menu {
+    .hamburger-menu {
         display: none;
     }
 
@@ -237,12 +237,12 @@ header
         display: none;
     }
 
-    .entryBtn--header {
+    .nav__item:has(.entryBtn--header) {
         min-width: 282px;
         margin: 0;
     }
 
-    .entryBtn--header a {
+    .nav__item .entryBtn--header {
         padding: 14px 0 12px;
         border-radius: 31px;
         background: linear-gradient(90deg, #0271E0, #53A2F0);
@@ -255,9 +255,9 @@ header
 
 
 /*
-article__heder
+articleHeader
 ================================================ */
-.article__heder {
+.articleHeader {
     margin-top: 70px;
 }
 
@@ -279,8 +279,8 @@ article__heder
 .mainVisual_subtitle::before {
     content: "";
     display: inline-block;
-    width: 24px;
-    height: 70px;
+    width: calc(100% * 24/147);
+    height: 100%;
     aspect-ratio: 147 / 68;
     background: url(../image/frame-left_sp.png) no-repeat left center / contain;
     position: absolute;
@@ -291,15 +291,15 @@ article__heder
 .mainVisual_subtitle::after {
     content: "";
     display: inline-block;
-    width: 24px;
-    height: 70px;
+    width: calc(100% * 24/147);
+    height: 100%;
     background: url(../image/frame-right_sp.png) no-repeat left center / contain;
     position: absolute;
     right: 0;
     top: -2px;
 }
 
-.mainVisual_subtitle--result {
+.mainVisual__result {
     display: block;
     color: #F11F8D;
     /* font-size: 25px; */
@@ -312,7 +312,7 @@ article__heder
     margin-top: -2px;
 }
 
-.mainVisual_subtitle--result span {
+.mainVisual__result span {
     /* font-size: 36px; */
     font-size: min(calc(100vw * 36/375), 40px);
 }
@@ -354,7 +354,7 @@ article__heder
     font-size: 1rem;
     font-weight: bold;
     line-height: 2.2;
-    /* inquiryBtnの背景色 */
+    /* btn--inquiryの背景色 */
     background-color: #77CB33;
     transition: all .3s ease-out;
 }
@@ -363,20 +363,20 @@ article__heder
     opacity: .6;
 }
 
-.freetrialBtn {
+.btn--freetrial {
     margin-top: 12px;
     background-color: #F6AA00;
 }
 
-.requestBtn {
+.btn--request {
     margin-top: 13px;
     background-color: #3AC8AD;
 }
 
 
-/* article__heder PC */
+/* articleHeader PC */
 @media screen and (min-width:768px) {
-    .article__heder {
+    .articleHeader {
         margin-top: 100px;
         /* mainVisual__btnZoneの位置の調整のため */
         position: relative;
@@ -400,8 +400,8 @@ article__heder
     .mainVisual_subtitle::before {
         content: "";
         display: inline-block;
-        width: 53px;
-        height: 150px;
+        width: calc(100% * 52/325);
+        height: 100%;
         background: url(../image/frame-left_pc.png) no-repeat left center / contain;
         position: absolute;
         left: 9px;
@@ -411,15 +411,15 @@ article__heder
     .mainVisual_subtitle::after {
         content: "";
         display: inline-block;
-        width: 53px;
-        height: 150px;
+        width: calc(100% * 52/325);
+        height: 100%;
         background: url(../image/frame-right_pc.png) no-repeat left center / contain;
         position: absolute;
         right: 9px;
         top: -6px;
     }
 
-    .mainVisual_subtitle--result {
+    .mainVisual__result {
         /* font-size: 54px; */
         font-size: min(calc(100vw * 54/1920), 70px);
         line-height: 1.52;
@@ -428,7 +428,7 @@ article__heder
         margin-left: 7px;
     }
 
-    .mainVisual_subtitle--result span {
+    .mainVisual__result span {
         /* font-size: 74px; */
         font-size: min(calc(100vw * 74/1920), 120px);
     }
@@ -451,7 +451,7 @@ article__heder
         padding: 0;
         display: flex;
         justify-content: center;
-        gap: 10px 40px;
+        gap: 10px 2vw;
         /* 位置の調整 */
         position: absolute;
         bottom: 0;
@@ -475,11 +475,11 @@ article__heder
         justify-content: center;
     }
 
-    .freetrialBtn {
+    .btn--freetrial {
         margin-top: 4px;
     }
 
-    .requestBtn {
+    .btn--request {
         margin-top: 4px;
     }
 
@@ -487,12 +487,12 @@ article__heder
 
 
 /*
-section__reason
+reason
 ================================================ */
-.section__reason {
+.reason {
     margin-top: 8px;
     padding: 0 calc(100% * 16/375) 33px;
-    scroll-margin-top: 385px;
+    scroll-margin-top: 400px;
 }
 
 .section__title span {
@@ -515,11 +515,11 @@ section__reason
     margin-top: 0;
 }
 
-.reason__item .pcImg {
+.reason__item .image--pc {
     display: none;
 }
 
-.reason__item .spImg {
+.reason__item .image--sp {
     aspect-ratio: 343 / 220;
     object-fit: cover;
 }
@@ -560,13 +560,13 @@ section__reason
 
 
 
-/* section__reason PC */
+/* reason PC */
 @media screen and (min-width:768px) {
-    .section__reason {
+    .reason {
         padding: 0 0 72px;
         max-width: 1160px;
         margin: 109px auto 0;
-        scroll-margin-top: 385px;
+        scroll-margin-top: 100px;
     }
 
     .section__title {
@@ -602,14 +602,14 @@ section__reason
         margin-top: 0;
     }
 
-    .reason__item .pcImg {
+    .reason__item .image--pc {
         display: block;
         aspect-ratio: 560 / 346;
         object-fit: cover;
         width: calc((100% - 40px) / 2);
     }
 
-    .reason__item .spImg {
+    .reason__item .image--sp {
         display: none;
     }
 
@@ -640,7 +640,7 @@ section__reason
         font-size: 1rem;
     }
 
-    .reason__txtZone .reason__txt2 {
+    .reason__txtZone .reason__txt--adjust {
         margin-top: 19px;
     }
 
@@ -661,7 +661,7 @@ section entry
     line-height: 1.75;
 }
 
-.entryBtn {
+.entryBtn--main {
     display: block;
     width: 100%;
     max-width: 305px;
@@ -681,7 +681,7 @@ section entry
     transform-origin: left center;
 }
 
-.entryBtn:hover {
+.entryBtn--main:hover {
     opacity: .6;
     transform: scaleX(1.05);
 }
@@ -702,7 +702,7 @@ section entry
         display: none;
     }
 
-    .entryBtn {
+    .entryBtn--main {
         max-width: 360px;
         height: 75px;
         padding: 19px 49px 21px 71px;
@@ -714,7 +714,7 @@ section entry
         transform-origin: 50% 50%;
     }
 
-    .entryBtn:hover {
+    .entryBtn--main:hover {
         opacity: .6;
         /* トランスフォームはPCでは元に戻す */
         transform: scaleX(1);
@@ -728,7 +728,7 @@ section__course
 ================================================ */
 .section__course {
     padding: 66px 0 62px;
-    scroll-margin-top: 335px;
+    scroll-margin-top: 330px;
 }
 
 .section__title--course {
@@ -801,15 +801,15 @@ section__course
     margin-top: 0;
 }
 
-.imgHidden {
+.tab__panel-imageWrapper {
     overflow: hidden;
 }
 
-.tab__panel-item .pcImg {
+.tab__panel-item .image--pc {
     display: none;
 }
 
-.tab__panel-item .spImg {
+.tab__panel-item .image--sp {
     width: 100%;
     aspect-ratio: 343 / 220;
     object-fit: cover;
@@ -838,7 +838,7 @@ section__course
         padding: 72px 0;
         max-width: 1160px;
         margin: 0 auto;
-        scroll-margin-top: 60px;
+        scroll-margin-top: 40px;
     }
 
     .section__title {
@@ -878,11 +878,11 @@ section__course
         width: calc((100% - 31px) / 2);
     }
 
-    .tab__panel-item .spImg {
+    .tab__panel-item .image--sp {
         display: none;
     }
 
-    .tab__panel-item .pcImg {
+    .tab__panel-item .image--pc {
         display: block;
         width: 100%;
         aspect-ratio: 532 / 329;
@@ -891,7 +891,7 @@ section__course
         transition: all .4s ease-out;
     }
 
-    .tab__panel-item .pcImg:hover {
+    .tab__panel-item .image--pc:hover {
         opacity: 0.6;
         transform: scale(1.2);
     }
@@ -932,7 +932,7 @@ section__cost
 ================================================ */
 .section__cost {
     padding: 66px calc(100% * 16/375) 63px;
-    scroll-margin-top: 335px;
+    scroll-margin-top: 330px;
 }
 
 .section__title--cost {
@@ -1011,16 +1011,16 @@ td:first-child {
 .section__cost td {
     border-bottom: 1px solid #ccc;
 }
-.td__under {
+.cost__td-end {
     border-bottom: none;
 }
 
-.section__cost .price {
+.section__cost .cost__price {
     position: relative;
     left: -3px;
 }
 
-.section__cost #priceLast .priceLast__item {
+.section__cost #priceLast .cost__price-item {
     font-size: 1.75rem;
     font-weight: bold;
     font-family: 'poppins', serif;
@@ -1033,7 +1033,7 @@ td:first-child {
 @media screen and (min-width:768px) {
     .section__cost {
         padding: 72px 16px;
-        scroll-margin-top: 60px;
+        scroll-margin-top: 40px;
     }
 
     .section__cost .section__title {
@@ -1090,13 +1090,13 @@ td:first-child {
         line-height: 2;
     }
 
-    .section__cost .price {
+    .section__cost .cost__price {
         position: relative;
         left: -3px;
         left: 0;
     }
 
-    .section__cost #priceLast .priceLast__item {
+    .section__cost #priceLast .cost__price-item {
         font-size: 2rem;
         line-height: 1.12;
         margin-left: 0;
@@ -1106,15 +1106,15 @@ td:first-child {
 
 
 /*
-article__footer
+articleFooter
 ================================================ */
-.article__footer {
+.articleFooter {
     width: 100%;
 }
 
 
-.articleFooter__faq,
-.articleFooter__search {
+.articleFooter__link--faq,
+.articleFooter__link--search {
     display: flex;
     align-items: center;
     width: 100%;
@@ -1128,34 +1128,34 @@ article__footer
     color: #fff;
 }
 
-.articleFooter__faq:hover,
-.articleFooter__search:hover {
+.articleFooter__link--faq:hover,
+.articleFooter__link--search:hover {
     opacity: .6;
 }
 
-.articleFooter__faq {
+.articleFooter__link--faq {
     background: url(../image/faq_img_sp.jpg) no-repeat center / cover;
 }
 
-.articleFooter__search {
+.articleFooter__link--search {
     background: url(../image/search_img_sp.jpg) no-repeat center / cover;
 }
 
-/* article__footer  PC*/
+/* articleFooter  PC*/
 @media screen and (min-width:768px) {
-    .article__footer {
+    .articleFooter {
         width: 100%;
         display: flex;
         align-items: center;
     }
 
-    .articleFooter__block {
+    .articleFooter__item {
         width: 50%;
         overflow: hidden;
     }
 
-    .articleFooter__faq,
-    .articleFooter__search {
+    .articleFooter__link--faq,
+    .articleFooter__link--search {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1167,16 +1167,16 @@ article__footer
         transition: all .3s ease-out;
     }
 
-    .articleFooter__faq:hover,
-    .articleFooter__search:hover {
+    .articleFooter__link--faq:hover,
+    .articleFooter__link--search:hover {
         transform: scale(1.2);
     }
 
-    .articleFooter__faq {
+    .articleFooter__link--faq {
         background: url(../image/faq_img_pc.jpg) no-repeat center / cover;
     }
 
-    .articleFooter__search {
+    .articleFooter__link--search {
         background: url(../image/search_img_pc.jpg) no-repeat center / cover;
 }
 
@@ -1192,11 +1192,11 @@ footer
     background-color: #ddd;
 }
 
-.copy {
+.footer__copy {
     text-align: center;
 }
 
-.copy small {
+.footer__copy small {
     font-family: "Poppins", sans-serif;
     font-size: 0.81rem;
 }
@@ -1208,7 +1208,7 @@ footer
         padding: 46px 16px 51px;
     }
 
-    .copy small {
+    .footer__copy small {
         font-size: 0.8125rem;
         line-height: 2.15;
     }

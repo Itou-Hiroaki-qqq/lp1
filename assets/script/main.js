@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ◆headerのドロワーメニュー
-  const hamburgerMenu = document.querySelector('.hamburger__menu');
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
   const nav = document.querySelector('.nav');
 
   hamburgerMenu.addEventListener('click', () => {
